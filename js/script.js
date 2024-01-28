@@ -42,6 +42,15 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // или 2 вариант табов
+    /* tabContent.forEach(c => c.style.display = 'none')
+        tabContent[0].style.display = 'flex'
+        for (let i = 0; i < tabs.length; i++) {
+            tabs[i].addEventListener('click', () => {
+                tabContent.forEach(c => c.style.display = 'none')
+                tabContent[i].style.display = 'flex'
+            })
+        } */
     // * modal
 
     more.addEventListener('click', () => {
@@ -110,6 +119,34 @@ window.addEventListener('DOMContentLoaded', () => {
 
     setClock('timer', deadline);
 
+    // или 2 вариант таймера
+    /* var countDownDate = new Date(Date.parse('2024-01-30')).getTime();
+
+    // Обновляем таймер каждую секунду
+    var x = setInterval(function () {
+    
+        // Рассчитываем оставшееся время
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+    
+        // Получаем дни, часы, минуты и секунды
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+        // Обновляем значения элементов таймера
+        document.getElementById("timer").innerHTML = days + "д " + hours + "ч "
+            + minutes + "м " + seconds + "с ";
+    
+        // Если таймер закончился, останавливаем обновление
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("timer").innerHTML = "Таймер закончился";
+        }
+    }, 1000); */
+
+    
     // * slider 
 
     let slideIndex = 1;
